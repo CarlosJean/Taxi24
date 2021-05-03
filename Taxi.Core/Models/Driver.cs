@@ -10,5 +10,7 @@ namespace Taxi.Core.Models {
         public string Surnames { get; set; }
         [StringLength(1)]
         public string Available { get; set; }
+        public decimal? Latitude { get; set; }
+        public decimal? Longitude { get; set; }
     }
 }

@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi.Core", "Taxi.Core\Taxi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi24.Data", "Taxi24.Data\Taxi24.Data.csproj", "{CF77B0B6-2854-415E-B841-A7E815B6D051}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taxi24.Services", "Taxi24.Services\Taxi24.Services.csproj", "{C130772A-2AE9-4938-AA86-2637B100E53B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{CF77B0B6-2854-415E-B841-A7E815B6D051}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF77B0B6-2854-415E-B841-A7E815B6D051}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF77B0B6-2854-415E-B841-A7E815B6D051}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C130772A-2AE9-4938-AA86-2637B100E53B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C130772A-2AE9-4938-AA86-2637B100E53B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C130772A-2AE9-4938-AA86-2637B100E53B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C130772A-2AE9-4938-AA86-2637B100E53B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

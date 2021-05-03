@@ -14,6 +14,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Taxi24.Data\Taxi24.Data.csproj" />
+    <ProjectReference Include="..\Taxi24.Services\Taxi24.Services.csproj" />
   </ItemGroup>
 
 

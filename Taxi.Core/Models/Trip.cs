@@ -18,9 +18,9 @@ namespace Taxi.Core.Models {
         public decimal DestinationLatitude { get; set; }
         public decimal DestinationLongitude { get; set; }
 
-        public ICollection<Driver> Driver { get; set; }
-        public ICollection<Passenger> Passenger { get; set; }
-        public ICollection<Fare> Fare { get; set; }
+        public Driver Driver { get; set; }
+        public Passenger Passenger { get; set; }
+        public Fare Fare { get; set; }
 
     }
 }

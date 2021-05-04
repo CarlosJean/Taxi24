@@ -1,5 +1,8 @@
 Para configurar la base de datos se deben especificar los parámetros en el archivo appsettings.json.
 
+Este proyecto utiliza data seeding para cargar datos iniciales.
+
+
 Endpoints:
 
 *Conductores:

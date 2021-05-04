@@ -1,3 +1,5 @@
+Para configurar la base de datos se deben especificar los parámetros en el archivo appsettings.json.
+
 Endpoints:
 
 *Conductores:

@@ -25,6 +25,12 @@ namespace Taxi24.Services {
                 if (entity != null) { 
                     entity.FinishDate = DateTime.Now;
                     this._db.Trip.Update(entity);
+
+                    //Marcar a conductor como  disponible.
+                    var driver = this._db.Driver.Where(d => d.Id == entity.DriverId).FirstOrDefault();
+                    driver.Available = "S";
+                    this._db.Driver.Update(driver);
+
                     this._db.SaveChanges();   
                 }
 
@@ -41,11 +47,10 @@ namespace Taxi24.Services {
 
             try {
 
-                var fareId = this._db.Fare
+                var fare= this._db.Fare
                     .Where(f => f.RegistrationDate <= DateTime.Now)
                     .OrderByDescending(f => f.RegistrationDate)
-                    .FirstOrDefault()
-                    .Id;
+                    .FirstOrDefault();
                 
                 this._db.Trip.Add(new Trip { 
                     DriverId = trip.DriverId,
@@ -55,9 +60,18 @@ namespace Taxi24.Services {
                     DestinationLatitude = trip.DestinationLatitude,
                     DestinationLongitude = trip.DestinationLongitude,
                     DemandDate = DateTime.Now,
-                    FareId = fareId,
-                    Cancelled = "N"
+                    FareId = fare.Id,
+                    Cancelled = "N",
+                    Fare = fare
                 });
+
+                //Marcar a conductor como no disponible.
+                var driver = this._db.Driver.Where(d=>d.Id == trip.DriverId).FirstOrDefault();
+                driver.Latitude = null;
+                driver.Longitude = null;
+                driver.Available = "N";
+                this._db.Driver.Update(driver);
+
                 this._db.SaveChanges();
                 return true;
             } catch (Exception) {

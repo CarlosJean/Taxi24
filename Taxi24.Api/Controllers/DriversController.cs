@@ -17,8 +17,8 @@ namespace Taxi24.Api.Controllers {
         private readonly DriverService driverService;
         public DriversController(Taxi24DbContext context) {
             this.driverService = new DriverService(context);
-
         }
+
         // GET: api/<DriversController>
         [HttpGet]
         public IEnumerable<Driver> Get() {
@@ -27,7 +27,7 @@ namespace Taxi24.Api.Controllers {
 
         // GET: api/<DriversController>
         [HttpGet]
-        [Route("api/[controller]/available")]
+        [Route("available")]
         public IEnumerable<Driver> Available() {
             return this.driverService.GetAvailables();
         }
@@ -38,19 +38,9 @@ namespace Taxi24.Api.Controllers {
             return this.driverService.Get(id);
         }
 
-        // POST api/<DriversController>
-        [HttpPost]
-        public void Post([FromBody] string value) {
-        }
-
-        // PUT api/<DriversController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value) {
-        }
-
-        // DELETE api/<DriversController>/5
-        [HttpDelete("{id}")]
-        public void Delete(int id) {
+        [HttpGet("lat={lat}&lng={lng}")]
+        public List<Driver> Get(double lat, double lng) {
+            return this.driverService.GetNearDrivers(lat, lng);
         }
     }
 }

@@ -1,7 +1,14 @@
-Para configurar la base de datos se deben especificar los parámetros en el archivo appsettings.json.
+Tecnologías utilizadas:
+*Asp.Net Core.
+*PostgreSQL.
 
+Pasos para configurar el proyecto:
+
+1. Clonar el proyecto.
+2. En el archivo appsettings.development.json especificar los parámetros de la base de datos (PostgreSQL), es decir, el host, usuario, nombre de la base de datos, y la contraseña.
+
+Nota:
 Este proyecto utiliza data seeding para cargar datos iniciales.
-
 
 Endpoints:
 
